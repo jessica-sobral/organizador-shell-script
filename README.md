@@ -61,11 +61,15 @@ Os testes cobrem: organização de arquivos, geração correta de estatísticas,
 - Gemini
 - Chat GPT
 
-## Organização do grupo
+## Organização do grupo & Responsabilidades
 
-- Isabelle Sena: 
-- Jéssica Sobral: 
-- Letícia Tchakerian: 
+O projeto foi dividido entre os 3 integrantes do grupo, cobrindo as áreas de automação, estrutura do sistema, controle de versão, documentação, testes e apresentação final.
+
+| Integrante | Responsabilidades | Arquivos / Evidências da contribuição |
+|---|---|---|
+| **Isabelle Sena** | Automação com scripts e parte dos testes automatizados | `scripts/organizar.sh`, `scripts/desfazer.sh`, `scripts/estatisticas.sh`, `scripts/ajuda.sh`, `tests/test_estatistica.sh`, `tests/test_desfazer.sh`, `tests/test_ajuda.sh`, `tests/test_executar_tudo.sh` |
+| **Jéssica Sobral** | Estrutura e lógica do sistema; Controle de versões (Git/GitHub); Gravação do vídeo (apresentação) | `organizador.sh` (menu principal), `Makefile`; criação e organização do repositório no GitHub, branches e Pull Requests; gravação do vídeo final |
+| **Letícia Tchakerian** | Documentação e parte dos testes automatizados; Gravação do vídeo (apresentação) | `README.md`, `tests/test_organizador.sh`; gravação do vídeo final |
 
 ## Uso de Inteligência Artificial como ferramenta de apoio
 
