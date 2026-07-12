@@ -57,3 +57,17 @@ make clean   # limpa os logs (histórico e manifesto)
 - **Estatísticas:** são cumulativas, guardadas em `logs/historico.log`, e
   mostram total de arquivos organizados, contagem por tipo, data da
   última organização e quais pastas já foram organizadas.
+
+## Testes
+
+Os testes cobrem: organização de arquivos, geração correta de estatísticas, 
+tratamento de nomes duplicados e o fluxo completo de desfazer.
+
+## Ferramentas utilizadas
+
+- VS Code;
+- Git Bash;
+- GitHub.
+
+## Organização do grupo
+
