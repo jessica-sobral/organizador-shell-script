@@ -44,7 +44,7 @@ A pasta Downloads (ou qualquer pasta de trabalho) costuma acumular arquivos de t
 
 3. Execute o programa:
 ```bash
-   ./organizador.sh
+   bash organizador.sh
 ```
    (ou `make run`)
 
