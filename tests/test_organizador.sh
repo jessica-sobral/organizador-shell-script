@@ -30,7 +30,7 @@ NOME_TESTE="Teste de organização em diretórios"
 if [[ -f "$dir_test/txt/anotacoes.txt" && -f "$dir_test/html/pagina.html" ]]; then
     echo -e "$NOME_TESTE [${AZUL}SUCESSO${NC}]"
 else
-    ERROS+=1
+    ((ERROS++))
     echo -e "$NOME_TESTE [${VERMELHO}FALHOU${NC}]"
 fi
 
@@ -40,31 +40,28 @@ NOME_TESTE="Teste de conteúdo dos arquivos"
 CONTEUDO_TXT=$(cat $dir_test/txt/anotacoes.txt)
 CONTEUDO_HTML=$(cat $dir_test/html/pagina.html)
 
-if [ "$CONTEUDO_TXT" == "teste-txt" ] && [ "CONTEUDO_HTML"=="teste-html" ]; then
+if [ "$CONTEUDO_TXT" == "teste-txt" ] && [ "$CONTEUDO_HTML" == "teste-html" ]; then
     echo -e "$NOME_TESTE [${AZUL}SUCESSO${NC}]"
 else
-    ERROS+=1
+    ((ERROS++))
     echo -e "$NOME_TESTE [${VERMELHO}FALHOU${NC}]"
 fi
-
-
-
 
 # Teste de desfazer organizacao dos arquivos
 NOME_TESTE="Teste de desfazer organização em diretórios"
 
-../scripts/desfazer.sh &> /dev/null
+../scripts/desfazer.sh "$test_manif" &> /dev/null
 
 if [[ -f "$dir_test/anotacoes.txt" && -f "$dir_test/pagina.html" ]]; then
     echo -e "$NOME_TESTE [${AZUL}SUCESSO${NC}]"
 else
-    ERROS+=1
+    ((ERROS++))
     echo -e "$NOME_TESTE [${VERMELHO}FALHOU${NC}]"
 fi
 
 
 # Resultado final
-if [[ ERROS -eq 0 ]]; then
+if [[ $ERROS -eq 0 ]]; then
     echo -e "${AZUL}Todos os testes foram bem sucedidos${NC}\n"
 else
     echo -e "${VERMELHO}Falha em um ou mais testes${NC}\n"

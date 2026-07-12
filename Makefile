@@ -10,7 +10,7 @@ run: permissoes
 	./organizador.sh
 
 test: permissoes
-	bash tests/test_organizador.sh
+	cd tests && bash test_executar_tudo.sh
 
 clean:
 	rm -f logs/historico.log logs/ultima_operacao.tsv

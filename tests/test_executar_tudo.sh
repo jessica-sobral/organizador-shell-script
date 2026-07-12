@@ -20,7 +20,7 @@ for arquivo_teste in test_*.sh; do
     saida=$(bash "$arquivo_teste")
     echo "$saida"
 
-    erros_deste_teste=$(echo "$saida" | grep -c "^ERRO")
+    erros_deste_teste=$(echo "$saida" | grep -Ec "ERRO|FALHOU")
     total_erros=$((total_erros + erros_deste_teste))
 done
 

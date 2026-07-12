@@ -24,7 +24,7 @@ else
     linhas=$(tail -r "$MANIFESTO")
 fi
 
-while IFS=$'/t' read ir destino origem; do
+while IFS=$'\t' read -r destino origem; do
 
     if [ -f "$destino" ]; then
         mkdir -p "$(dirname "$origem")"

@@ -5,6 +5,7 @@ echo "== Testando scripts/estatisticas.sh =="
 dir_test=$(mktemp -d)
 test_hist="$dir_test/historico_teste.log"
 
+{
     printf "2026-07-01 10:00:00\tpdf\trelatorio.pdf\t/tmp/pastaA\n"
     printf "2026-07-01 10:00:01\tpdf\tcontrato.pdf\t/tmp/pastaA\n"
     printf "2026-07-02 09:30:00\tjpg\tfoto.jpg\t/tmp/pastaB\n"
