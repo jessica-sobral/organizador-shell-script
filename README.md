@@ -1,10 +1,14 @@
 # Organizador Automático de Arquivos
  
 Sistema em Shell Script (Bash) que organiza arquivos automaticamente em subpastas por tipo/extensão, mantém estatísticas de uso e permite desfazer a última organização feita. Projeto desenvolvido para a disciplina de Sistemas Operacionais / Shell Script.
+
+## Problema resolvido
  
+A pasta Downloads (ou qualquer pasta de trabalho) costuma acumular arquivos de tipos variados (PDF, imagens, planilhas, instaladores etc.) sem nenhuma organização. Este projeto automatiza a separação desses arquivos em subpastas por tipo, sem risco de perda de dados, já que é possível desfazer a última operação a qualquer momento.
+
 ## Menu 
  
-```
+```bash
 ======================================
  ORGANIZADOR AUTOMÁTICO DE ARQUIVOS
 ======================================
@@ -17,25 +21,45 @@ Sistema em Shell Script (Bash) que organiza arquivos automaticamente em subpasta
 ======================================
 ```
 
-## Problema resolvido
- 
-A pasta Downloads (ou qualquer pasta de trabalho) costuma acumular arquivos de tipos variados (PDF, imagens, planilhas, instaladores etc.) sem nenhuma organização. Este projeto automatiza a separação desses arquivos em subpastas por tipo, sem risco de perda de dados, já que é possível desfazer a última operação a qualquer momento.
-
 ## Como executar
+
+### Pré-requisitos
+- Sistema Linux, WSL ou Git Bash (Windows)
+- `bash` instalado
+- Comando `make` instalado (opcional, apenas se for usar o Makefile)
  
-Pré-requisitos: Linux/WSL com `bash`, `tac` (ou `tail -r` como alternativa,
-já tratado no script), `find`, `mv`, `mkdir`.
- 
+### Passo a passo
+
+1. Clone o repositório:
 ```bash
-chmod +x organizador.sh scripts/*.sh tests/*.sh
-./organizador.sh
+   git clone 
+   cd organizador
 ```
- 
-### Usando o Makefile
- 
+
+2. Dê permissão de execução aos scripts:
 ```bash
-make run     # ajusta permissões e já abre o menu
-make clean   # limpa os logs (histórico e manifesto)
+   chmod +x organizador.sh scripts/*.sh tests/*.sh
+```
+   (ou, se preferir, use `make permissoes`)
+
+3. Execute o programa:
+```bash
+   ./organizador.sh
+```
+   (ou `make run`)
+
+4. O menu será exibido no terminal. Digite o número da opção desejada
+   (1 a 6) e pressione ENTER.
+
+5. Para rodar os testes automatizados:
+```bash
+   bash tests/test_organizador.sh
+```
+   (ou `make test`)
+
+6. Para limpar os logs (histórico e manifesto) e recomeçar do zero:
+```bash
+   make clean
 ```
 
 ## Detalhes importantes de funcionamento
@@ -67,9 +91,9 @@ O projeto foi dividido entre os 3 integrantes do grupo, cobrindo as áreas de au
 
 | Integrante | Responsabilidades | Arquivos / Evidências da contribuição |
 |---|---|---|
-| **Isabelle Sena** | Automação com scripts e parte dos testes automatizados | `scripts/organizar.sh`, `scripts/desfazer.sh`, `scripts/estatisticas.sh`, `scripts/ajuda.sh`, `tests/test_estatistica.sh`, `tests/test_desfazer.sh`, `tests/test_ajuda.sh`, `tests/test_executar_tudo.sh` |
+| **Isabelle Sena** | Automação com scripts e parte dos testes automatizados | `scripts/desfazer.sh`, `scripts/estatisticas.sh`, `scripts/ajuda.sh`, `tests/test_estatistica.sh`, `tests/test_desfazer.sh`, `tests/test_ajuda.sh`, `tests/test_executar_tudo.sh` |
 | **Jéssica Sobral** | Estrutura e lógica do sistema; Controle de versões (Git/GitHub); Gravação do vídeo (apresentação) | `organizador.sh` (menu principal), `Makefile`; criação e organização do repositório no GitHub, branches e Pull Requests; gravação do vídeo final |
-| **Letícia Tchakerian** | Documentação e parte dos testes automatizados; Gravação do vídeo (apresentação) | `README.md`, `tests/test_organizador.sh`; gravação do vídeo final |
+| **Letícia Tchakerian** | Documentação e parte dos testes automatizados; Gravação do vídeo (apresentação) | `scripts/organizar.sh`, `README.md`, `tests/test_organizador.sh`; gravação do vídeo final |
 
 ## Uso de Inteligência Artificial como ferramenta de apoio
 
